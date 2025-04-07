@@ -84,8 +84,11 @@ case $INFO in
     ;;
 esac
 
+fmid=$(aerospace list-monitors --focused)
 sketchybar --set $NAME icon=$ICON \
   icon.padding_right=$ICON_PADDING_RIGHT \
   icon.padding_left=$ICON_PADDING_LEFT \
+  display=$fmid
 
-sketchybar --set $NAME.name label="$INFO"
+sketchybar --set $NAME.name label="$INFO" \
+  display=$fmid

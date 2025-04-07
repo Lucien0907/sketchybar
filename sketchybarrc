@@ -43,6 +43,15 @@ sketchybar --add item current_space left \
     script="$PLUGIN_SHARED_DIR/current_space.sh" \
     --subscribe current_space space_change mouse.clicked
 
+sketchybar --add item centre_space_left q \
+    --set centre_space_left \
+    background.color=0x33a6da95 \
+    background.padding_right=3 \
+    background.padding_left=3 \
+    background.drawing=on \
+    label.drawing=no \
+    icon.drawing=off
+
 # Show AeroSpace workspaces in Sketchybar
 sketchybar --add event aerospace_workspace_change
 
@@ -69,6 +78,15 @@ for mid in $(aerospace list-monitors --format %{monitor-id}); do
   sketchybar --add bracket space_bracket_$mid "/space\\.${mid}\\..*/" \
       --set space_bracket_$mid disply=$mid
 done
+
+sketchybar --add item centre_space_right e \
+    --set centre_space_right \
+    background.color=0x33a6da95 \
+    background.padding_right=3 \
+    background.padding_left=3 \
+    background.drawing=on \
+    label.drawing=no \
+    icon.drawing=off
 
 sketchybar --add item front_app e \
     --set front_app \

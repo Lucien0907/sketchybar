@@ -14,7 +14,7 @@ if [ "$2" = "$(aerospace list-workspaces --focused)" ]; then
   sketchybar --set $NAME background.drawing=on background.color=0xfff5a97f label="$label" label.color=0xff000000 label.drawing=yes icon.drawing=on
 else
   if [ "$2" = "$(aerospace list-workspaces --monitor "$1" --visible)" ]; then
-    sketchybar --set $NAME background.drawing=on background.color=0x99ffffff label="$label" label.color=0xff000000 label.drawing=yes icon.drawing=on
+    sketchybar --set $NAME background.drawing=off label="$label" label.color=0xfff5a97f label.drawing=yes icon.drawing=on
   else
     if [ "$(aerospace list-windows --workspace "$2" --count)" -gt 0 ]; then
       sketchybar --set $NAME background.drawing=off label.drawing=yes label="$label" label.color=0xffffffff icon.drawing=on
