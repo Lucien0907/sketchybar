@@ -8,6 +8,15 @@ PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
 
 SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
 
+MODEL=$(sysctl -n hw.model)
+if [ "$MODEL" = "MacBookPro16,2" ]; then
+  NOTCH_WIDTH=0
+elif [ "$MODEL" = "Mac15,12" ]; then
+  NOTCH_WIDTH=220
+else
+  NOTCH_WIDTH=0  # default fallback
+fi
+
 sketchybar --bar \
     height=47 \
     color=0x00000000 \
@@ -15,7 +24,7 @@ sketchybar --bar \
     sticky=on \
     padding_left=15 \
     padding_right=15 \
-    notch_width=220 \
+    notch_width=$NOTCH_WIDTH \
     display=all
 
     # label.color=0xffcad3f5 \
