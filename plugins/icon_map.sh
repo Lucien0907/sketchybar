@@ -21,8 +21,6 @@ get_icon() {
   "TextEdit") echo "" ;;
   "WeChat") echo "" ;;
   "Ghostty") echo "" ;;
-  "WeChat") echo "" ;;
-  "Ghostty") echo ="" ;;
   "Slack") echo ="" ;;
   "Microsoft Teams") echo ="" ;;
   *) echo "$DEFAULT_ICON" ;;
