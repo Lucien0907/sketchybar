@@ -9,7 +9,7 @@ COUNTRY="$(echo $LOCATION_JSON | jq '.country' | tr -d '"')"
 
 # If it's my work machine which I often use with VPN, fix it to where I am actually located
 MODEL=$(sysctl -n hw.model)
-if [ "$model" = "MacBookPro16,2" ]; then
+if [ "$MODEL" = "MacBookPro16,2" ]; then
   LOCATION="Leeds"
   REGION="England"
   COUNTRY="GB"
