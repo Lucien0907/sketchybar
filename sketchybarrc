@@ -15,7 +15,7 @@ sketchybar --bar \
     sticky=on \
     padding_left=15 \
     padding_right=15 \
-    notch_width=213 \
+    notch_width=220 \
     display=all
 
     # label.color=0xffcad3f5 \
@@ -47,8 +47,8 @@ sketchybar --add item current_space left \
 sketchybar --add event aerospace_workspace_change
 
 for mid in $(aerospace list-monitors --format %{monitor-id}); do
-  for sid in $(aerospace list-workspaces --monitor $mid); do
-    sketchybar --add item space.$mid.$sid left \
+  for sid in $(aerospace list-workspaces --monitor $mid | tac); do
+    sketchybar --add item space.$mid.$sid q \
         --subscribe space.$mid.$sid aerospace_workspace_change space_windows_change\
         --set space.$mid.$sid \
         background.padding_right=0 \
@@ -70,14 +70,14 @@ for mid in $(aerospace list-monitors --format %{monitor-id}); do
       --set space_bracket_$mid disply=$mid
 done
 
-sketchybar --add item front_app left \
+sketchybar --add item front_app e \
     --set front_app \
     background.color=0xffa6da95 \
     background.padding_left=0 \
     icon.color=0xff24273a \
     label.drawing=no \
     script="$PLUGIN_SHARED_DIR/front_app.sh" \
-    --add item front_app.name left \
+    --add item front_app.name e \
     --set front_app.name \
     background.padding_left=-5 \
     background.drawing=off \
@@ -89,7 +89,7 @@ sketchybar --add bracket front_app_bracket \
     front_app.name \
     --subscribe front_app front_app_switched
 
-sketchybar --add item weather q \
+sketchybar --add item weather left \
     --set weather \
     icon= \
     icon.color=0xfff5bde6 \
@@ -102,7 +102,7 @@ sketchybar --add item weather q \
     --subscribe weather system_woke
 
 sketchybar --add event spotify_change $SPOTIFY_EVENT \
-    --add item spotify e \
+    --add item spotify left \
     --set spotify \
     icon= \
     icon.padding_left=7 \
