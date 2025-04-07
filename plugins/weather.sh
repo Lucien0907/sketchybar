@@ -7,6 +7,14 @@ LOCATION="$(echo $LOCATION_JSON | jq '.city' | tr -d '"')"
 REGION="$(echo $LOCATION_JSON | jq '.region' | tr -d '"')"
 COUNTRY="$(echo $LOCATION_JSON | jq '.country' | tr -d '"')"
 
+# If it's my work machine which I often use with VPN, fix it to where I am actually located
+MODEL=$(sysctl -n hw.model)
+if [ "$model" = "MacBookPro16,2" ]; then
+  LOCATION="Leeds"
+  REGION="England"
+  COUNTRY="GB"
+fi
+
 # Line below replaces spaces with +
 LOCATION_ESCAPED="${LOCATION// /+}+${REGION// /+}"
 WEATHER_JSON=$(curl -s "https://wttr.in/$LOCATION_ESCAPED?format=j1")
