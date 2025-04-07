@@ -22,7 +22,7 @@ get_icon() {
   "WeChat") echo "" ;;
   "Ghostty") echo "" ;;
   "Slack") echo "" ;;
-  "Microsoft Teams") echo "" ;;
+  "Microsoft Teams") echo "" ;;
   *) echo "$DEFAULT_ICON" ;;
   esac
 }

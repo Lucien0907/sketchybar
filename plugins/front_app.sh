@@ -31,7 +31,6 @@ case $INFO in
     ;;
 "System Settings")
     ICON=
-    ICON_PADDING_RIGHT=6
     ICON_PADDING_LEFT=6
     ;;
 "Google Chrome")
@@ -51,12 +50,10 @@ case $INFO in
     ;;
 "Spotify")
     ICON_PADDING_LEFT=6
-    ICON_PADDING_RIGHT=6
     ICON=
     ;;
 "Steam Helper")
     ICON=
-    ICON_PADDING_RIGHT=6
     ICON_PADDING_LEFT=6
     ;;
 "TextEdit")
@@ -73,6 +70,12 @@ case $INFO in
     ICON_PADDING_RIGHT=7
     ICON_PADDING_LEFT=8
     ICON=
+    ;;
+"Slack")
+    ICON=
+    ;;
+"Microsoft Teams")
+    ICON=
     ;;
 *)
     ICON_PADDING_RIGHT=5
